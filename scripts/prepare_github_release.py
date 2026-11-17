@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FOLDERS = ['frontend','shared','agent','backend','ruoyi/backend','ruoyi/frontend','ruoyi/scripts','scripts','docs','deploy','ai/scripts','assets-source/hangzhou/output','.github']
 FILES = ['.gitignore','package.json','package-lock.json','ai/env-spec.json','ai/requirements-lock.txt','ai/README.md','ai/.gitignore','ruoyi/.gitignore','ruoyi/README.md','ruoyi/config/application-sky-twin.yml','ruoyi/config/maven-settings.xml']
 SKIP_DIR = {'.git','.runtime','.venv','venv','node_modules','__pycache__','.cache','.idea','.vscode','target','dist','logs','data','datasets','runs','.ultralytics'}
-SKIP_EXT = {'.log','.pyc','.pyo','.db','.sqlite','.sqlite3','.ibd','.rdb','.aof','.exe','.dll','.zip','.7z','.rar','.mp4','.mov','.docx','.pdf','.psd','.pt','.pth'}
+SKIP_EXT = {'.log','.pyc','.pyo','.db','.sqlite','.sqlite3','.ibd','.rdb','.aof','.exe','.dll','.zip','.7z','.rar','.mp4','.mov','.docx','.pdf','.psd','.pt','.pth','.tsbuildinfo'}
 SKIP_NAME = {'LEARNING_PROGRESS.md','local-secrets.json','runtime.local.json','mysql-root.cnf','mysql.ini','redis.conf','.DS_Store'}
 
 

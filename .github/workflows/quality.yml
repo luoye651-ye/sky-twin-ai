@@ -12,6 +12,10 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
         working-directory: frontend
+      # Main frontend imports shared management Vue components. Their Vue
+      # types resolve from the management frontend's dependency directory.
+      - run: npm ci
+        working-directory: ruoyi/frontend
       - run: node --test tests/*.test.mjs
         working-directory: frontend
       - run: npm run build
