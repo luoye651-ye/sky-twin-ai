@@ -239,8 +239,6 @@ def main():
         if args.ui:
             _, ui_task = order('ui_route')
             environment = dict(os.environ, SKYTWIN_UI_PREFIX=PREFIX, SKYTWIN_UI_TASK=ui_task, SKYTWIN_UI_ADMIN_TOKEN=admin, SKYTWIN_UI_VIEWER_TOKEN=read_only)
-            bundled = pathlib.Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-            if bundled.exists(): environment.setdefault('SKYTWIN_PLAYWRIGHT_MODULE', str(bundled))
             run = subprocess.run([helpers.RUNTIME['NodeExecutable'], str(ROOT / 'scripts/verify-routes-ui.mjs')], cwd=ROOT.parent, env=environment, timeout=160)
             check('real browser waypoint editor passes', run.returncode == 0)
         check('original user task state and durations preserved', mysql("SELECT id,status,COALESCE(aircraft_id,''),duration_seconds FROM st_task WHERE id NOT IN (" + ids(tasks) + ') ORDER BY id;') == baseline)

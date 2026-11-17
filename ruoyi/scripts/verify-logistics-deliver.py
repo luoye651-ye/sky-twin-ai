@@ -127,9 +127,6 @@ def main():
     def run_browser(viewer):
         environment = dict(os.environ,
             SKYTWIN_UI_PREFIX=PREFIX, SKYTWIN_UI_ADMIN_TOKEN=admin, SKYTWIN_UI_VIEWER_TOKEN=viewer)
-        bundled = pathlib.Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-        if bundled.exists():
-            environment.setdefault('SKYTWIN_PLAYWRIGHT_MODULE', str(bundled))
         run = subprocess.run([helpers.RUNTIME['NodeExecutable'], str(ROOT / 'scripts/verify-logistics-ui.mjs')],
             cwd=ROOT.parent, env=environment, capture_output=True, text=True, encoding='utf-8', timeout=240)
         print(run.stdout, end='', flush=True)

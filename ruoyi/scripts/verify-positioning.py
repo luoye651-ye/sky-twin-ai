@@ -235,8 +235,6 @@ def main():
             ui_aircraft = req('/sky/aircraft', dict(a_input, name=PREFIX + '_ui_aircraft'))
             aircraft.append(ui_aircraft)
             environment = dict(os.environ, SKYTWIN_UI_PREFIX=PREFIX, SKYTWIN_UI_AIRCRAFT=ui_aircraft, SKYTWIN_UI_ADMIN_TOKEN=admin, SKYTWIN_UI_VIEWER_TOKEN=viewer_token)
-            bundled = pathlib.Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-            if bundled.exists(): environment.setdefault('SKYTWIN_PLAYWRIGHT_MODULE', str(bundled))
             run = subprocess.run([helpers.RUNTIME['NodeExecutable'], str(ROOT / 'scripts/verify-positioning-ui.mjs')], cwd=ROOT.parent, env=environment, timeout=150)
             check('real browser workflow passes', run.returncode == 0)
         check('original user task states preserved', mysql("SELECT id,status,COALESCE(aircraft_id,'') FROM st_task WHERE id NOT IN (" + sql_ids(tasks) + ') ORDER BY id;') == baseline)

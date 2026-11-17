@@ -256,8 +256,6 @@ def main():
         if args.ui:
             ui_a, ui_b = task('uiA'), task('uiB', 1)
             env = dict(os.environ, SKYTWIN_UI_PREFIX=PREFIX, SKYTWIN_UI_TASKS=json.dumps([ui_a, ui_b]), SKYTWIN_UI_ADMIN_TOKEN=admin, SKYTWIN_UI_VIEWER_TOKEN=read_only)
-            bundled = pathlib.Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-            if bundled.exists(): env.setdefault('SKYTWIN_PLAYWRIGHT_MODULE', str(bundled))
             run = subprocess.run([h.RUNTIME['NodeExecutable'], str(ROOT / 'scripts/verify-traffic-ui.mjs')], cwd=ROOT.parent, env=env, timeout=160)
             check('real browser traffic workflow passes', run.returncode == 0)
         check('original user tasks retain state assignment and duration', mysql("SELECT id,status,COALESCE(aircraft_id,''),duration_seconds FROM st_task WHERE id NOT IN (" + ids(tasks) + ') ORDER BY id;') == baseline)

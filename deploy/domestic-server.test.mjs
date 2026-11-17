@@ -7,7 +7,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { createDomesticServer } from './domestic-server.mjs'
 
-test('domestic entry serves SPA and same-origin APIs without Sites, preserving access controls and streaming', async t => {
+test('domestic entry serves SPA and same-origin APIs, preserving access controls and streaming', async t => {
   const directory = mkdtempSync(path.join(os.tmpdir(), 'skytwin-cn-test-'))
   writeFileSync(path.join(directory, 'index.html'), '<html><div id="app">isolated fixture</div></html>')
   writeFileSync(path.join(directory, 'fixture.json'), JSON.stringify({ fixture: 'test-only-'.repeat(1000) }))
@@ -34,7 +34,7 @@ test('domestic entry serves SPA and same-origin APIs without Sites, preserving a
   })
   assert.match(await (await check('/ai-workbench')).text(), /isolated fixture/)
   const config = await (await check('/deployment-config.js')).text()
-  assert.match(config, /apiOrigin: ''/); assert.doesNotMatch(config, /chatgpt|localhost.run/)
+  assert.match(config, /apiOrigin: ''/); assert.doesNotMatch(config, /legacy-host\.invalid|localhost.run/)
   const asset = await fetch(base + '/fixture.json', { headers: { 'Accept-Encoding': 'gzip' } })
   assert.equal(asset.headers.get('Content-Encoding'), 'gzip')
   assert.equal((await asset.json()).fixture, 'test-only-'.repeat(1000))

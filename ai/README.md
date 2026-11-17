@@ -40,7 +40,7 @@ Windows x64，Python 3.13，PyTorch 2.8.0+cu128，torchvision 0.23.0+cu128，Ult
 以下命令均在 PowerShell、项目根目录执行，不需要先激活虚拟环境：
 
 ```powershell
-Set-Location D:\cursor\project\sky-twin
+Set-Location C:\path\to\sky-twin
 .\ai\.venv\Scripts\python.exe ai\scripts\river_yolo.py check
 .\ai\.venv\Scripts\python.exe ai\scripts\prepare_dataset.py verify
 .\ai\.venv\Scripts\python.exe ai\scripts\test_dataset_tools.py

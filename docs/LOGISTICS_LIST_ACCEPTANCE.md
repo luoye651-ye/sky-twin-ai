@@ -14,7 +14,7 @@
 
 ## 亲手复跑
 
-从 `D:\cursor\project\sky-twin` 执行：
+从 `C:\path\to\sky-twin` 执行：
 
 ```powershell
 python .\ruoyi\scripts\verify-logistics-list.py

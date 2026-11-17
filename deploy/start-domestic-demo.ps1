@@ -16,4 +16,4 @@ if(Test-LocalPort 5182){throw 'Domestic demo port 5182 is already used; nothing 
 $process=Start-Process -FilePath (Get-Command node).Source -ArgumentList @((Join-Path $PSScriptRoot 'run-domestic-demo.mjs')) -WorkingDirectory $root -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $root '.runtime/domestic-demo.stdout.log') -RedirectStandardError (Join-Path $root '.runtime/domestic-demo.stderr.log')
 @{pid=$process.Id;startedUtc=$process.StartTime.ToUniversalTime().ToString('o');executable=$process.Path}|ConvertTo-Json|Set-Content -LiteralPath $statePath -Encoding UTF8
 Write-Host 'Domestic demo starting. Read .runtime/domestic-demo.stdout.log for the new HTTPS URL.'
-Write-Host 'No Sites, localhost.run, or proxy connection is used by this connector.'
+Write-Host 'No legacy overseas hosting or proxy connection is used by this connector.'

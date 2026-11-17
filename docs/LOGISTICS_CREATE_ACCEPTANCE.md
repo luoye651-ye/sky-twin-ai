@@ -20,7 +20,7 @@ x.startStationId().equals(x.endStationId())
 
 ## 第一步：从项目根目录编译、启动
 
-终端当前目录应为 `D:\cursor\project\sky-twin`。以下命令逐条执行，上一条失败就先看错误，不继续往下：
+终端当前目录应为 `C:\path\to\sky-twin`。以下命令逐条执行，上一条失败就先看错误，不继续往下：
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ruoyi\scripts\stop.ps1 -Service backend
@@ -100,9 +100,9 @@ Java接口：`POST /sky/logistics/orders`。示意请求（测试脚本会用其
 文件位置：
 
 ```text
-D:\cursor\project\sky-twin\ruoyi\logs\logistics-backend-build.log
-D:\cursor\project\sky-twin\ruoyi\logs\logistics-create-verification.log
-D:\cursor\project\sky-twin\ruoyi\logs\logistics-create-verification.json
+.\ruoyi\logs\logistics-backend-build.log
+.\ruoyi\logs\logistics-create-verification.log
+.\ruoyi\logs\logistics-create-verification.json
 ```
 
 JSON报告中查看：

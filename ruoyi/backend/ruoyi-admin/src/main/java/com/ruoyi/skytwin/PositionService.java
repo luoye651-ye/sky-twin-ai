@@ -92,7 +92,7 @@ public class PositionService {
         try { begin=PositionRules.time(from);end=PositionRules.time(to); }
         catch(RuntimeException e) { throw new ServiceException("查询时间须为带时区的 ISO 时间",400); }
         require(begin.isBefore(end) && Duration.between(begin,end).compareTo(Duration.ofDays(7))<=0,"查询时段须大于0且不超过7天");
-        // Cursor uses ingestion ID, not sampledAt: rejected out-of-order times must not break pagination.
+        // Pagination uses ingestion ID, not sampledAt: rejected out-of-order times must not break ordering.
         var rows=db.rows("SELECT * FROM st_position_sample WHERE device_id=? AND sampled_at>=? AND sampled_at<? AND id>?"+(acceptedOnly?" AND accepted=1":"")+" ORDER BY id LIMIT ?",id,utc(begin),utc(end),after,limit+1);
         boolean more=rows.size()>limit;
         if(more) rows=new ArrayList<>(rows.subList(0,limit));

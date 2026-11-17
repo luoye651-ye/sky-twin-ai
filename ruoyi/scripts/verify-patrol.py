@@ -151,8 +151,6 @@ def main():
         if args.ui:
             legacy = h.mysql("SELECT id FROM st_patrol_eval WHERE status='completed' AND JSON_UNQUOTE(JSON_EXTRACT(report_json,'$.protocolVersion'))='haida-test-v1' ORDER BY created_time LIMIT 1;")
             env = dict(os.environ,SKYTWIN_UI_ADMIN_TOKEN=token,SKYTWIN_UI_VIEWER_TOKEN=viewer_token,SKYTWIN_PATROL_RUN=run_id,SKYTWIN_PATROL_LEGACY_RUN=legacy)
-            bundled = Path.home()/'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-            if bundled.exists(): env.setdefault('SKYTWIN_PLAYWRIGHT_MODULE',str(bundled))
             subprocess.run(['node',str(ROOT/'ruoyi/scripts/verify-patrol-ui.mjs')],env=env,cwd=ROOT,check=True)
         REPORT['passed'] = True
     finally:

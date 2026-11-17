@@ -71,6 +71,12 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ruoyi\scripts\start.ps
 - 新电脑完整安装、多用户操作和外部模型领域效果还需扩大验证。
 - `.github/workflows/quality.yml` 配置前端、Agent 隔离测试和 Java 编译；远端运行结果以 GitHub Actions 实际记录为准。
 
+## 代码规范
+
+- 代码与文档统一使用 UTF-8，基础缩进和行尾规则见 `.editorconfig`。
+- Vue/TypeScript 以类型检查和生产构建为基础门禁；Python 以隔离单元测试为门禁；Java 以 Maven 编译打包为门禁。
+- 提交前可在仓库根目录执行 `npm.cmd run build --prefix frontend`、`python -m unittest ...` 和 `mvn -B -ntp -f ruoyi/backend/pom.xml -DskipTests package`；完整命令见 `.github/workflows/quality.yml`。
+
 ## 团队
 
 | 项目 | 信息 |

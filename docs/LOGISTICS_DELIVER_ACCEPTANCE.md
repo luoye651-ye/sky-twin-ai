@@ -37,7 +37,7 @@
 在项目根目录执行，复用已启动的服务：
 
 ```powershell
-cd D:\cursor\project\sky-twin
+cd C:\path\to\sky-twin
 D:\miniconda\python.exe .\ruoyi\scripts\verify-logistics-deliver.py
 ```
 

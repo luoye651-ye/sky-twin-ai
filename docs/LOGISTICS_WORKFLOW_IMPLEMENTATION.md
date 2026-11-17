@@ -88,7 +88,7 @@ ruoyi/frontend/src/components/sky-twin/
 ## 复跑
 
 ```powershell
-cd D:\cursor\project\sky-twin
+cd C:\path\to\sky-twin
 # 后端规则与重启恢复
 D:\miniconda\python.exe .\ruoyi\scripts\verify-logistics-deliver.py --workflow
 # 同时跑隔离浏览器（本机使用已安装Chrome和工作区运行时Playwright）

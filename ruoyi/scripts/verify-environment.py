@@ -270,8 +270,6 @@ DELIMITER ;
         check('closed evidence and report cannot be overwritten by repeated actions', req('/sky/environment/reports/' + final['report']['id']) == report)
         if args.ui:
             env = dict(os.environ, SKYTWIN_UI_PREFIX=PREFIX, SKYTWIN_UI_SOURCE=source, SKYTWIN_UI_AIRCRAFT=resource, SKYTWIN_UI_STATIONS=json.dumps(stations), SKYTWIN_UI_BEFORE=before_image.hex(), SKYTWIN_UI_AFTER=after_image.hex(), SKYTWIN_UI_ADMIN_TOKEN=admin, SKYTWIN_UI_VIEWER_TOKEN=read_only)
-            bundled = pathlib.Path.home() / '.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'
-            if bundled.exists(): env.setdefault('SKYTWIN_PLAYWRIGHT_MODULE', str(bundled))
             run = subprocess.run([h.RUNTIME['NodeExecutable'], str(ROOT / 'scripts/verify-environment-ui.mjs')], cwd=ROOT.parent, env=env, timeout=200)
             check('real browser complete evidence-to-report workflow passes', run.returncode == 0)
         REPORT['reportId'] = final['report']['id']

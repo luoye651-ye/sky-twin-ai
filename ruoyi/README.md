@@ -61,7 +61,7 @@ Java 后端与管理前端来自官方独立仓库，保留原有 MIT 许可证�
 从项目根目录运行，不需要激活 Python 虚拟环境或修改系统 JAVA_HOME：
 
 ```powershell
-cd D:\cursor\project\sky-twin
+cd C:\path\to\sky-twin
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\ruoyi\scripts\start.ps1
 ```
 
@@ -102,7 +102,7 @@ Java 脚本指定便携 JDK 17、Maven 3.9，缓存保存在 `.runtime/maven-rep
 前端重新安装依赖：
 
 ```powershell
-cd D:\cursor\project\sky-twin\ruoyi\frontend
+cd .\ruoyi\frontend
 npm.cmd ci --registry=https://registry.npmjs.org --cache ../.runtime/npm-cache --no-audit --no-fund
 ```
 

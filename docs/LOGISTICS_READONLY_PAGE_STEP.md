@@ -6,7 +6,7 @@
 
 ## 文件职责
 
-| 位置（均在 D:/cursor/project/sky-twin/frontend/src 内） | 责任 | 数据契约 |
+| 位置（均在 ./frontend/src 内） | 责任 | 数据契约 |
 |---|---|---|
 | api/logistics.ts | 已有请求封装，补订单类型 | 返回订单数组 |
 | composables/useLogisticsOrders.ts | 加载、刷新、错误处理 | 返回orders/loading/error/loadOrders |
@@ -19,7 +19,7 @@
 
 ## 1. 修改已有 api/logistics.ts
 
-完整位置：`D:/cursor/project/sky-twin/frontend/src/api/logistics.ts`。
+完整位置：`./frontend/src/api/logistics.ts`。
 
 保留请求方式，补上TypeScript数据类型和数组检查。可替换为：
 
@@ -53,7 +53,7 @@ export async function listLogisticsOrders(): Promise<LogisticsOrder[]> {
 
 ## 2. 新建请求状态逻辑
 
-完整位置：`D:/cursor/project/sky-twin/frontend/src/composables/useLogisticsOrders.ts`。
+完整位置：`./frontend/src/composables/useLogisticsOrders.ts`。
 
 ```ts
 import { onMounted, onUnmounted, shallowRef } from 'vue'
@@ -98,7 +98,7 @@ export function useLogisticsOrders() {
 
 先新建 `components/logistics` 文件夹。
 
-完整位置：`D:/cursor/project/sky-twin/frontend/src/components/logistics/LogisticsOrderTable.vue`。
+完整位置：`./frontend/src/components/logistics/LogisticsOrderTable.vue`。
 
 ```vue
 <script setup lang="ts">
@@ -146,7 +146,7 @@ const orderLabels: Record<string, string> = {
 
 ## 4. 新建组合组件
 
-完整位置：`D:/cursor/project/sky-twin/frontend/src/components/logistics/LogisticsOrderPanel.vue`。
+完整位置：`./frontend/src/components/logistics/LogisticsOrderPanel.vue`。
 
 ```vue
 <script setup lang="ts">
@@ -181,7 +181,7 @@ const { orders, loading, error, loadOrders } = useLogisticsOrders()
 
 ## 5. 新建路由入口页
 
-完整位置：`D:/cursor/project/sky-twin/frontend/src/views/Logistics/index.vue`。
+完整位置：`./frontend/src/views/Logistics/index.vue`。
 
 ```vue
 <script setup lang="ts">
@@ -197,7 +197,7 @@ import LogisticsOrderPanel from '../../components/logistics/LogisticsOrderPanel.
 
 ## 6. 注册新路由
 
-打开 `D:/cursor/project/sky-twin/frontend/src/router/index.ts`，在 `routes: [...]` 数组里新增以下对象；注意与前一个对象之间有逗号，不要覆盖原路由。
+打开 `./frontend/src/router/index.ts`，在 `routes: [...]` 数组里新增以下对象；注意与前一个对象之间有逗号，不要覆盖原路由。
 
 ```ts
 {
@@ -211,7 +211,7 @@ import LogisticsOrderPanel from '../../components/logistics/LogisticsOrderPanel.
 
 ## 7. 保存后的验收
 
-在 `D:\cursor\project\sky-twin\frontend` 执行：
+在 `.\frontend` 执行：
 
 ```powershell
 npm.cmd run build

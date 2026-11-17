@@ -1,5 +1,5 @@
 // Same-origin website + authenticated APIs, ready for a domestic HTTPS tunnel.
-// Uses the existing Java/Agent business services without Sites or an overseas
+// Uses the existing Java/Agent business services without an overseas
 // routing service. The internal API gateway is loopback-only and secret-gated.
 import http from 'node:http'
 import { randomBytes } from 'node:crypto'
@@ -85,5 +85,5 @@ if (process.argv[1] && import.meta.url === new URL('file:///' + process.argv[1].
   const settings = JSON.parse(readFileSync(path.join(root, '.runtime/domestic-demo.json'), 'utf8').replace(/^\uFEFF/, ''))
   const service = await createDomesticServer({ publicOrigin: settings.publicOrigin })
   for (const signal of ['SIGINT', 'SIGTERM']) process.on(signal, () => service.close())
-  console.log('Domestic demonstration gateway ready on 127.0.0.1:5182; no Sites dependency')
+  console.log('Domestic demonstration gateway ready on 127.0.0.1:5182')
 }
