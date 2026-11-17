@@ -134,4 +134,4 @@ HAIDA 是 PPMd ZIP（压缩方法98），Python 标准 `zipfile` 无法解压；
 
 主导航「环境发现」或 `http://127.0.0.1:5173/environment`：每次新巡逻随机抽取1～132张不重复的HAIDA test图片进行真实推理，同次巡逻刷新保持结果不变。展示图片/检出数量列表，点击后在当前页无标题弹窗查看无英文横幅检测图。页面不展示评测指标、报告下载或列表下方详情；后台保留来源及原始可追溯结果，随机子集结果不能替代完整test精度。旧AI巡逻地址自动跳转。无需重新标注；不是杭州实拍或真实飞行，不自动生成应急事件。
 
-训练完成后运行 `ai/scripts/pin_patrol_model.py --run haida-demo-to100` 发布已完成权重。缺失模型时界面明确禁用启动，不使用中间权重或伪造框。完整部署、口径、权限与验收见 [AI_PATROL_EVALUATION_V1.md](../docs/AI_PATROL_EVALUATION_V1.md)。
+训练完成后运行 `ai/scripts/pin_patrol_model.py --run haida-demo-to100` 发布已完成权重。缺失模型时界面明确禁用启动，不使用中间权重或伪造框。模型、数据与部署恢复方式见 [MODEL_DATA.md](../docs/MODEL_DATA.md)。
