@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "mode": "isolated mocked Java API and account; real Three.js/GLB rendering; not real flight evidence",
+  "checks": [
+    "logistics map tracking link opens the selected task",
+    "route remaining and direct-to-destination distances are distinct",
+    "real city scene renders UAV, planned/history/remaining paths and current marker",
+    "new SSE task position updates distance and waypoint position without page reload",
+    "locate current task and frame full route controls work",
+    "refresh preserves task selection and reloads authoritative saved tracks",
+    "switching tasks clears old track and uses new task origin",
+    "missing task does not fall back to an unrelated aircraft or fake distance",
+    "opening digital twin auto-selects an executing logistics task and persists its ID",
+    "completion retains selected task, shows zero distance and does not confirm delivery",
+    "cancelled position is frozen; history failures are visible rather than fabricated",
+    "stream disconnection is explicitly marked and navigation is not extrapolated",
+    "tracking card remains inside the narrow viewport",
+    "no runtime errors and no business writes from tracking"
+  ],
+  "errors": [],
+  "businessWrites": []
+}

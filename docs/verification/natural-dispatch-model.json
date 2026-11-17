@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "real_model": true,
+  "java_and_mcp": "isolated fixtures",
+  "business_writes": 0,
+  "checks": {
+    "only_logistics_selected": true,
+    "server_plan_id_returned": true,
+    "not_executed_notice": true,
+    "no_assignment_or_flight_call": true
+  }
+}

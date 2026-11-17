@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-15",
+  "scope": "one real DeepSeek request with newly generated geometric fixture; not garbage accuracy or business/browser acceptance",
+  "model": "deepseek-flash",
+  "image_sha256": "445dd81047765386de176108e0e8ee80ca6d3eb5f37c0d32dd17410f20bd0a9b",
+  "image_width": 384,
+  "image_height": 256,
+  "calls": 1,
+  "private_project_material_sent": false,
+  "question": "请说明这张合成测试图中两个几何图形各自的颜色、形状和相对位置。不要把它当作真实业务影像。",
+  "result": {
+    "summary": "合成测试图中有两个纯色几何图形：左侧为红色正方形，右侧为蓝色圆形，二者水平并排、互不重叠。",
+    "observations": [
+      {
+        "label": "红色正方形",
+        "description": "纯红色填充、边缘平直的四边形，四边近似等长，内部无纹理。",
+        "location": "画面左侧偏中",
+        "certainty": "清晰"
+      },
+      {
+        "label": "蓝色圆形",
+        "description": "纯蓝色填充的圆形，轮廓平滑，内部无纹理。",
+        "location": "画面右侧偏中，与红色正方形大致同一水平高度",
+        "certainty": "清晰"
+      }
+    ],
+    "limitations": [
+      "仅基于合成测试图的视觉观察，不涉及真实场景或业务含义。"
+    ]
+  },
+  "usage": {
+    "input_tokens": 421,
+    "output_tokens": 141
+  },
+  "checks": {
+    "red_observed": true,
+    "blue_observed": true,
+    "square_observed": true,
+    "circle_observed": true
+  },
+  "passed": true
+}

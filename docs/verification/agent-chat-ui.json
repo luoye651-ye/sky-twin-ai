@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "mode": "isolated mocked Java/chat APIs; no real token or paid model",
+  "checks": [
+    "Agent指挥 defaults to read-only chat; blank submission disabled",
+    "suggestions fill input without automatically spending model credits",
+    "single submission shows reply, actual trace and expandable source metadata",
+    "original algorithm dispatch retained; chat survives tab switching",
+    "auth error is visible and preserves the question; no automatic retry",
+    "incomplete response is not displayed as successful answer",
+    "stop aborts waiting and ignores late responses",
+    "model text is escaped, not rendered as executable HTML",
+    "unavailable service disables sending and can reconnect explicitly",
+    "IME enter and Shift+Enter do not submit requests",
+    "chat layout fits a narrow viewport",
+    "no business writes and no browser runtime errors"
+  ]
+}

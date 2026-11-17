@@ -1,0 +1,10 @@
+.runtime/
+data/
+logs/
+config/local-secrets.json
+config/runtime.local.json
+config/mysql-root.cnf
+config/mysql-bootstrap.sql
+config/mysql-import.sql
+config/mysql.ini
+config/redis.conf

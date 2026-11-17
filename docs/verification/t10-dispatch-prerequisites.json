@@ -1,0 +1,14 @@
+{
+  "Date": "2026-11-16",
+  "RegressionTests": 128,
+  "RegressionResult": "OK",
+  "NewDispatchRegressionCases": 6,
+  "ProxyReady": true,
+  "AnonymousChatStatus": 401,
+  "AgentReloaded": true,
+  "RealModelCalled": false,
+  "RealAccountEndToEndTested": false,
+  "BusinessDataWritten": false,
+  "AgentSourceSHA256": "B765CB8EB23B2C63B839170C47DE07A92DF71BAFBF42EA1C3631506D6CFEAEF0",
+  "TestSourceSHA256": "6CE27AFE0B0DA6C2E0DA759C5A5E2B5451F2A74DCF27AB01B8E636BFE60E55FA"
+}

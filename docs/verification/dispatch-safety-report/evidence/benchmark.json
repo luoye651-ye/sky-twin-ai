@@ -1,0 +1,22 @@
+{
+  "protocol": "summary-offline-v1",
+  "simulationTime": "2026-10-18T12:00:00",
+  "randomSeed": 521,
+  "randomCases": 200,
+  "jobsPerCase": 4,
+  "aircraftPerCase": 4,
+  "optimizedExactMatches": 200,
+  "nearestExactMatches": 115,
+  "optimizedAssignedSum": 506,
+  "nearestAssignedSum": 487,
+  "fixedOptimizedAssignments": 2,
+  "fixedNearestAssignments": 1,
+  "invalidCandidateCases": 8,
+  "optimizerFalseAccepts": 0,
+  "idleOnlyFalseAccepts": 8,
+  "validCandidateCases": 4,
+  "validAccepted": 4,
+  "baseline1": "same hard constraints, priority then nearest greedy",
+  "baseline2": "ablation: idle-status-only admission, not a historical or competing product",
+  "scope": "deterministic synthetic offline assignment tests, not real flight or industry-wide performance"
+}

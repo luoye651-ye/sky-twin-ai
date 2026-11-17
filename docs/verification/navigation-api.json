@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "mode": "real local Java + MySQL 3307; unique simulation fixtures",
+  "checks": [
+    "dedicated MySQL 3307 only",
+    "anonymous snapshot denied",
+    "snapshot navigation starts at frozen v2 origin",
+    "detour remaining mileage exceeds destination straight distance",
+    "initial remaining matches full saved route distance",
+    "navigation and tracks GET do not create business audit",
+    "read-only viewer receives navigation without dispatch permission",
+    "executing simulation reaches server-confirmed completion",
+    "distance decreases along actual waypoint legs",
+    "completed navigation is zero at landed destination",
+    "saved flown history exists and last point matches destination",
+    "flight completion does not auto-confirm logistics delivery",
+    "cancelled task freezes its last route-time position",
+    "aircraft reuse cannot move the completed task marker",
+    "real SSE publishes matching server navigation"
+  ],
+  "samples": [
+    [
+      0,
+      1399.891417845055
+    ],
+    [
+      1,
+      1399.891417845055
+    ],
+    [
+      2,
+      1399.891417845055
+    ],
+    [
+      3,
+      1312.3982042298605
+    ],
+    [
+      4,
+      1224.9049906146658
+    ],
+    [
+      5,
+      1137.4117769994712
+    ],
+    [
+      6,
+      1049.9185633842765
+    ],
+    [
+      7,
+      962.4253497690818
+    ],
+    [
+      8,
+      874.9321361531797
+    ],
+    [
+      9,
+      787.4389225399746
+    ],
+    [
+      10,
+      699.945708926354
+    ],
+    [
+      11,
+      612.4524953090469
+    ],
+    [
+      12,
+      524.9592816918754
+    ],
+    [
+      13,
+      437.46606807597345
+    ],
+    [
+      14,
+      349.97285446077876
+    ],
+    [
+      15,
+      262.4796408455841
+    ],
+    [
+      16,
+      174.98642723038938
+    ],
+    [
+      17,
+      87.49321361519469
+    ],
+    [
+      18,
+      0.0
+    ],
+    [
+      19,
+      0.0
+    ],
+    [
+      20,
+      0.0
+    ]
+  ],
+  "cleanup": {
+    "st_task": 0,
+    "st_task_route": 0,
+    "st_track": 0,
+    "st_logistics_order": 0,
+    "st_aircraft": 0,
+    "st_station": 0,
+    "st_audit": 0
+  }
+}

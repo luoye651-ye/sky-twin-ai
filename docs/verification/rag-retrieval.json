@@ -1,0 +1,398 @@
+{
+  "scope": "20 hand-written retrieval regression/calibration questions; not held-out evaluation or LLM accuracy",
+  "model": "BAAI/bge-small-zh-v1.5",
+  "model_revision": "46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59",
+  "threshold": 0.5,
+  "chunks": 30,
+  "top_k": 3,
+  "passed": 20,
+  "total": 20,
+  "rows": [
+    {
+      "question": "禁飞区命中后还能起飞吗",
+      "expected_section": "禁飞区命中条件",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "禁飞区命中条件",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.665
+        },
+        {
+          "section": "起飞拦截与人工校验",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.6557
+        },
+        {
+          "section": "自动候选绕行与保存",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5672
+        }
+      ]
+    },
+    {
+      "question": "飞行高度恰好等于限高会违规吗",
+      "expected_section": "限高区与恰好等于限高",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "限高区与恰好等于限高",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.7671
+        },
+        {
+          "section": "禁飞区命中条件",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.5574
+        },
+        {
+          "section": "自动候选绕行与保存",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5394
+        }
+      ]
+    },
+    {
+      "question": "空域区域最多可以配置多少个",
+      "expected_section": "区域配置约束和规则版本",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "区域配置约束和规则版本",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.6206
+        },
+        {
+          "section": "限高区与恰好等于限高",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.553
+        },
+        {
+          "section": "自动候选绕行与保存",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5854
+        }
+      ]
+    },
+    {
+      "question": "禁飞规则开始和结束时间包含边界吗",
+      "expected_section": "禁飞区命中条件",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "禁飞区命中条件",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.6569
+        },
+        {
+          "section": "区域配置约束和规则版本",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.5331
+        },
+        {
+          "section": "起飞拦截与人工校验",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.5797
+        }
+      ]
+    },
+    {
+      "question": "起飞时还会重新校验空域规则吗",
+      "expected_section": "起飞拦截与人工校验",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "起飞拦截与人工校验",
+          "source": "agent/knowledge/airspace.md",
+          "score": 0.6719
+        },
+        {
+          "section": "自动候选绕行与保存",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.6109
+        },
+        {
+          "section": "创建、分配与执行任务",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5445
+        }
+      ]
+    },
+    {
+      "question": "怎么创建和分配任务",
+      "expected_section": "创建、分配与执行任务",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "创建、分配与执行任务",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5648
+        },
+        {
+          "section": "地图框选与独立演示环境",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5125
+        },
+        {
+          "section": "失败任务重试与待处理提醒",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5107
+        }
+      ]
+    },
+    {
+      "question": "通勤任务对起降场和乘客有什么要求",
+      "expected_section": "创建、分配与执行任务",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "创建、分配与执行任务",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5898
+        },
+        {
+          "section": "通勤班次预约与取消",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5455
+        }
+      ]
+    },
+    {
+      "question": "AI巡逻为什么不是每次132张图片",
+      "expected_section": "AI水域巡逻识别演示",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "AI水域巡逻识别演示",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.6333
+        },
+        {
+          "section": "提交发现证据",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5626
+        },
+        {
+          "section": "巡逻识别与应急事件的边界",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5263
+        }
+      ]
+    },
+    {
+      "question": "AI识别漂浮物后会自动生成应急事件吗",
+      "expected_section": "巡逻识别与应急事件的边界",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "巡逻识别与应急事件的边界",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.6719
+        },
+        {
+          "section": "人工复核与事件生成",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5822
+        },
+        {
+          "section": "DeepSeek直接看图对话",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5744
+        }
+      ]
+    },
+    {
+      "question": "上传发现图片应关联什么状态的任务",
+      "expected_section": "提交发现证据",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "上传图片分析与人工发现",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5259
+        },
+        {
+          "section": "DeepSeek直接看图对话",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5395
+        },
+        {
+          "section": "提交发现证据",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5151
+        }
+      ]
+    },
+    {
+      "question": "发现记录需要人工复核确认吗",
+      "expected_section": "人工复核与事件生成",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "人工复核与事件生成",
+          "source": "agent/knowledge/response.md",
+          "score": 0.696
+        },
+        {
+          "section": "为什么不能直接从通用事件接口结案",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5656
+        },
+        {
+          "section": "巡逻识别与应急事件的边界",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5747
+        }
+      ]
+    },
+    {
+      "question": "上次侦察还没结束可以重复安排吗",
+      "expected_section": "安排应急侦察与重试",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "安排应急侦察与重试",
+          "source": "agent/knowledge/response.md",
+          "score": 0.6549
+        },
+        {
+          "section": "为什么不能直接从通用事件接口结案",
+          "source": "agent/knowledge/response.md",
+          "score": 0.542
+        },
+        {
+          "section": "结案条件与处置后证据",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5715
+        }
+      ]
+    },
+    {
+      "question": "应急事件结案需要哪些证据",
+      "expected_section": "结案条件与处置后证据",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "结案条件与处置后证据",
+          "source": "agent/knowledge/response.md",
+          "score": 0.6811
+        },
+        {
+          "section": "巡逻识别与应急事件的边界",
+          "source": "agent/knowledge/platform.md",
+          "score": 0.5464
+        },
+        {
+          "section": "安排应急侦察与重试",
+          "source": "agent/knowledge/response.md",
+          "score": 0.5954
+        }
+      ]
+    },
+    {
+      "question": "侦察取消或者失败能算处置成功吗",
+      "expected_section": "结案条件与处置后证据",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "结案条件与处置后证据",
+          "source": "agent/knowledge/response.md",
+          "score": 0.6074
+        },
+        {
+          "section": "安排应急侦察与重试",
+          "source": "agent/knowledge/response.md",
+          "score": 0.612
+        },
+        {
+          "section": "失败任务重试与待处理提醒",
+          "source": "agent/knowledge/operations.md",
+          "score": 0.5377
+        }
+      ]
+    },
+    {
+      "question": "可以从通用事件接口直接关闭环境事件吗",
+      "expected_section": "为什么不能直接从通用事件接口结案",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "为什么不能直接从通用事件接口结案",
+          "source": "agent/knowledge/response.md",
+          "score": 0.6936
+        }
+      ]
+    },
+    {
+      "question": "我的数据库密码是多少",
+      "expected_section": null,
+      "passed": true,
+      "retrieved": []
+    },
+    {
+      "question": "今天杭州天气怎么样",
+      "expected_section": null,
+      "passed": true,
+      "retrieved": []
+    },
+    {
+      "question": "2026年黄金价格是多少",
+      "expected_section": null,
+      "passed": true,
+      "retrieved": []
+    },
+    {
+      "question": "帮我写一首唐诗",
+      "expected_section": null,
+      "passed": true,
+      "retrieved": []
+    },
+    {
+      "question": "新能源电池化学成分是什么",
+      "expected_section": null,
+      "passed": true,
+      "retrieved": []
+    }
+  ],
+  "document_hashes": {
+    "agent/knowledge/platform.md": "f0c3b6d7f1387a01de22bc654599c0636ab957ad0032023a54054e935583403d",
+    "agent/knowledge/airspace.md": "36e0ed58cfe8e466184c8c8b70312c544299ec67e6c881fe4ef765d7e5e40016",
+    "agent/knowledge/response.md": "e3e79f3adf689ec74ba329b7bea9b720d3b71c366ce7e25d8a05e6c098f9d4a9",
+    "agent/knowledge/operations.md": "3534dfaa1378dfe8196ceaa38fb9e1382bf727e15e88c63dd75391e582a1c006"
+  },
+  "code_hashes": {
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/SkyController.java": "848ca294041ed77da7b359ba5c84c9f022762bdc2c8a40996f9d0fc8b0b04cf5",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/SkyService.java": "c893afa165b0cc79a625b89d413becf8e55cd884d6b8c7a305a11916ae7cdb57",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/AirspaceService.java": "7745019957499adce176b154797a06677608f7715e0a20fd010dbfea9ff248b9",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/AirspaceEngine.java": "71e704871fc786acf060f563672041742cbc6aa5e8890efa506a2485c0212306",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/EnvironmentService.java": "89fc49c0fd3dac4346aa3a540d09071f3e25712f8d73fe5cda4076c17fb01ac4",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/EnvironmentRules.java": "2574e0040b8bfafa78ce89956e5ec4df7a02b26c982013bbd7db9d3ce28daa63",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/PatrolEvaluationService.java": "fae1004fe512e2ceeae78dd9a5b9f3403d62ac18afe1b98844f3551ceac693ee",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/DispatchController.java": "fa7d31adf901eb3d986e1343d9f11def101674aa86c4e9a4a60d510799cbb779",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/DispatchService.java": "0c6d45cf992e30244b3ef114e05c37a41eaccde21a9c3b18caa1774188cac86f",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/VisionAnalysisService.java": "3f678feee47aa0ead710b551c555dc409faa50fe100a2a15739c65abdfa91df2",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/TaskOperationsService.java": "f84a264aefb3b4e0d3cdd1ec22df8aca670d8f7c62b30cf35743f487419b5b0f",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/ResourceOperationsService.java": "f29fd2c23ac7ae910fff1f5e92f3576fee5db98d0aa87ec1584fb18f096b92b3",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/OperationsRules.java": "9ecd87a37e95f0c4808dc9941cebd26243a3acdb342199646bcdeb7a6fa19e68",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/CommuteService.java": "05db727374d6dd00204fe0657dcca274c250618ee0fd5c6f49d2b85c7178e630",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/OperationsReportService.java": "3b47e56528932e55b880d65987f3f7ac98754ad71f99d7e2647d4a941cb0dccf",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/OperationsController.java": "2da6ddea0f81f07e96873ca5ffd76e81f87fd5dfa539fe7aad310eb13e4d5665",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/DetourPlanner.java": "a7fa70fc70ff181d61a54532111ca7ac829513cc7a8be54f4798907ff6cabe2f",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/RouteService.java": "87b5d1fc7db11ea3fcfae410fb0b9591be9e25ba3bdf2ea717781579c907b924",
+    "ruoyi/backend/sql/sky_twin_v8_environment.sql": "eae2d364bbaa300adb5611a6e9471082eb2c06fb941ce154a69813191dec55d8",
+    "agent/aircraft_agent.py": "5aaf4b981234ae7762fba7ede4c445c2db0e976cadab7b6941bcfd193cdd961a",
+    "agent/mcp_server.py": "cfc6af0af29a8f17c90d6ddd2ca943624b7d7a54bb7b4ef0cfbf178fd8694efe",
+    "agent/dispatch_tools.py": "fbb7f2b932f99c7c266a8a02dc86c09cbabdca9ba70eb6dfaef195d1453b23c5",
+    "agent/conversation_store.py": "af24f4bb00d143f730758d2a0311776b42eabac1221f9b423ce912c8b1ca96a1",
+    "ai/scripts/vision_upload.py": "4c74d4d50dd66197de4b9be6cacb0f6c4973a39c27c4ef324e64b0ecf0866ac8",
+    "agent/workbench_api.py": "779e8a378f6530661dfce120e41322ebf48a2acdecf727ad2fec216a5aa825dd",
+    "agent/workbench_service.py": "c67524ccd7ba85de3a24a78eef9fda570010e4a889dac988676c384b647de4de",
+    "agent/workbench_store.py": "a7b050ca2225d85bb030ef2eaea0b43bf15d9ef63dd6c3895a647e0ab92218e8",
+    "agent/workbench_knowledge.py": "9c3f93f7176a30ea1f88f16662485b4bfb12599f1fea15296474b8730fc65219",
+    "agent/workbench_trace.py": "a143bef247a7f299b26f8e0b6cc4bde129aa1d5dfcb50c7fdb256e9bda5fd72a",
+    "agent/safety_policy.py": "3d177f0b42bce04d768e48ecb38ea77019f4f86c94fe67b345d78c68b1398843",
+    "agent/vision_chat.py": "ea99b2e8028945d5dd581dd49b915ce39bb963564d45775c25a72850603ff80b",
+    "ruoyi/backend/sql/agent_artifacts_sqlite_v1.sql": "9ffce805c7e1d00ff54e6de35b114f7ae48eb3548c5cd34feccbed2ab9b1215f"
+  },
+  "paid_llm_calls": 0
+}

@@ -1,0 +1,39 @@
+name: Local quality gates
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+        working-directory: frontend
+      - run: node --test tests/*.test.mjs
+        working-directory: frontend
+      - run: npm run build
+        working-directory: frontend
+  agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: pip install -r requirements.lock.txt
+        working-directory: agent
+      - run: python -m unittest test_vision_chat test_workbench test_demo_service test_business_tools test_dispatch_tools test_conversation test_chat_service test_rag_agent test_aircraft_agent test_rag -q
+        working-directory: agent
+  java-compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+      - run: mvn -B -ntp -f ruoyi/backend/pom.xml -DskipTests package

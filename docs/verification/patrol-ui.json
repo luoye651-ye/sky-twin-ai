@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "random count drives lean list; page explanation and all benchmark UI absent",
+    "random-size list pagination works",
+    "same-page image modal has no visible title or header text",
+    "titleless modal closes and reopens correctly",
+    "refresh preserves sample count and exact results, never rerandomizes history",
+    "old entry redirect preserves random-run deep link",
+    "historical full-run detection image also serves clean preview without changing report",
+    "viewer cannot start random patrol",
+    "new patrol selects and processes its own random size; duplicate clicks disabled",
+    "no browser runtime errors"
+  ],
+  "sampleCounts": [
+    51,
+    30
+  ]
+}

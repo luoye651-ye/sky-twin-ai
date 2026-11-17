@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-20",
+  "feature": "Agent指挥网页聊天（只读）",
+  "deployment": {"page": "http://127.0.0.1:5173/agent-command", "api": "http://127.0.0.1:8002", "managed_service": "agent", "bound_to_loopback": true},
+  "verified": {
+    "python_unit_protocol_tests": {"passed": 71, "failed": 0, "models_and_identities": "offline fixtures"},
+    "frontend_stream_parser_tests": {"passed": 5, "failed": 0},
+    "isolated_browser_checks": {"passed": 12, "failed": 0, "report": "agent-chat-ui.json"},
+    "live_deployment_checks": {"passed": 6, "failed": 0, "report": "agent-chat-api.json", "scope": "health and unauthorized/invalid-token rejection only"},
+    "local_retrieval_regression": {"passed": 20, "total": 20, "not_a_held_out_accuracy_benchmark": true},
+    "vue_typecheck": "passed",
+    "vite_production_build": "passed; existing large chunk warnings retained",
+    "python_compile": "passed",
+    "pip_check": "No broken requirements found",
+    "managed_services": "3307/16380/8081/5174/5173/8002 running and ready",
+    "agent_stop_start": "only verified owned Agent process tree stopped and restarted; original Java/database PIDs unchanged"
+  },
+  "security": ["Java validates each request and sky:read", "request platform identity explicitly passed to MCP; no global token fallback", "no credentials in model tool schema/messages", "cached replies reauthenticate and are isolated by user", "one active request per user, two globally, six new requests per minute per user", "body/schema/origin/Host checks", "disconnect cleanup and stale UI response protection", "HTML rendered as escaped plain text"],
+  "paid_provider_calls_during_work": 0,
+  "real_user_tokens_used_during_work": false,
+  "business_writes_during_work": 0,
+  "limitations": ["no multi-turn model memory; each question is independent", "page-only conversation history", "no natural-language dispatch or takeoff", "live DeepSeek web/RAG generation not invoked; user acceptance pending", "valid citations do not prove every generated statement correct"],
+  "screenshots": ["agent-chat-window.png", "agent-chat-mobile.png"],
+  "screenshot_data": "explicit isolated UI acceptance fixtures, not real model replies"
+}

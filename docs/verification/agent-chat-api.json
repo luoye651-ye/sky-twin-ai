@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-06T17:19:15.985212+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "target": "http://127.0.0.1:8002",
+      "check": "health",
+      "passed": true
+    },
+    {
+      "target": "http://127.0.0.1:8002",
+      "check": "anonymous_denied",
+      "passed": true
+    },
+    {
+      "target": "http://127.0.0.1:8002",
+      "check": "invalid_token_denied",
+      "passed": true
+    },
+    {
+      "target": "http://127.0.0.1:5173/agent-api",
+      "check": "health",
+      "passed": true
+    },
+    {
+      "target": "http://127.0.0.1:5173/agent-api",
+      "check": "anonymous_denied",
+      "passed": true
+    },
+    {
+      "target": "http://127.0.0.1:5173/agent-api",
+      "check": "invalid_token_denied",
+      "passed": true
+    }
+  ],
+  "paid_model_calls": 0,
+  "real_credentials_used": false,
+  "business_writes": 0
+}

@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-15",
+  "implementation": "existing DeepSeek image + natural language conversation; no new provider or credentials",
+  "checks": {
+    "python_isolated": 110,
+    "vision_specific": 10,
+    "frontend_node": 72,
+    "typecheck_and_build": "passed",
+    "base_retrieval": 20,
+    "prior_features_retrieval": 8,
+    "operations_retrieval": 5,
+    "knowledge_chunks": 30,
+    "agent_ready": true,
+    "anonymous_vision_health_http": 401
+  },
+  "live": {
+    "date": "2026-11-15",
+    "scope": "one real DeepSeek request with newly generated geometric fixture; not garbage accuracy or business/browser acceptance",
+    "model": "deepseek-flash",
+    "image_sha256": "445dd81047765386de176108e0e8ee80ca6d3eb5f37c0d32dd17410f20bd0a9b",
+    "image_width": 384,
+    "image_height": 256,
+    "calls": 1,
+    "private_project_material_sent": false,
+    "question": "请说明这张合成测试图中两个几何图形各自的颜色、形状和相对位置。不要把它当作真实业务影像。",
+    "result": {
+      "summary": "合成测试图中有两个纯色几何图形：左侧为红色正方形，右侧为蓝色圆形，二者水平并排、互不重叠。",
+      "observations": [
+        {
+          "label": "红色正方形",
+          "description": "纯红色填充、边缘平直的四边形，四边近似等长，内部无纹理。",
+          "location": "画面左侧偏中",
+          "certainty": "清晰"
+        },
+        {
+          "label": "蓝色圆形",
+          "description": "纯蓝色填充的圆形，轮廓平滑，内部无纹理。",
+          "location": "画面右侧偏中，与红色正方形大致同一水平高度",
+          "certainty": "清晰"
+        }
+      ],
+      "limitations": [
+        "仅基于合成测试图的视觉观察，不涉及真实场景或业务含义。"
+      ]
+    },
+    "usage": {
+      "input_tokens": 421,
+      "output_tokens": 141
+    },
+    "checks": {
+      "red_observed": true,
+      "blue_observed": true,
+      "square_observed": true,
+      "circle_observed": true
+    },
+    "passed": true
+  },
+  "limitations": [
+    "No real-account browser upload acceptance",
+    "No domain-specific accuracy claim from the geometric fixture",
+    "YOLO boxes and VLM candidate observations remain separate"
+  ],
+  "source_sha256": {
+    "agent/vision_chat.py": "c73c1f1ab6ae8b98d535f87d5e585d5327b1330b1c12cf577d37e665fbd16fba",
+    "agent/test_vision_chat.py": "515376c7f5216a8c08e43a591241703fbc4d0889be3e580da5b4d0cc342a6946",
+    "agent/chat_service.py": "db38fa7d18c7e8d93e123e88c9061e8fdaf4dde3eba24e965c2688236449f72d",
+    "agent/workbench_api.py": "779e8a378f6530661dfce120e41322ebf48a2acdecf727ad2fec216a5aa825dd",
+    "agent/rag.py": "cf4a4d62b5fc6a46403a42970c0a172e2b5a2fc6048e5a25cfa23bcce861dbbc",
+    "frontend/src/composables/useImageChat.ts": "c4462a74fa1876fa0cf668f8e4302087d53dd2c81fb6cab4e9f72c7b16cf3d3d",
+    "frontend/src/composables/useAgentChat.ts": "8eec7c755da04973fe1042435251bb139cdcdd6caae4592e2ef670a1c5188300",
+    "frontend/src/api/visionChat.ts": "99488cb81c36e4ea086ace108323fccdba33ca0aa1d8730ad8f7424f75bea471",
+    "frontend/src/components/agent/AgentImageAttachment.vue": "b1263a65702fb4ad8e41e56fc39addc66158e7d848afd1e9465c212dc712efd8",
+    "frontend/src/components/agent/AgentVisionResult.vue": "a9fa7ea4bc121bf804b05cd3ce3beac3e6c3e09486502a469daf574fbc9e7d53",
+    "frontend/src/components/agent/AgentChatWorkspace.vue": "7735773545199baa44b4c19e0552c3bee9083af7bc546d1214561563122cd2b2",
+    "frontend/src/components/agent/AgentConversation.vue": "79c02a665de9568ae9ac19d9133aa2156fa3102d35b96048d331c2d454013af4",
+    "docs/DEEPSEEK_IMAGE_CHAT.md": "cc338eccc447feb7e7112c7b2d0583c6d26ef5259fa2f6b3afe19a6f10d30215"
+  }
+}

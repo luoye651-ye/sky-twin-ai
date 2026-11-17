@@ -1,0 +1,25 @@
+﻿{
+    "capturedAt":  "2026-10-24T20:13:00.1355358+08:00",
+    "protocol":  "summary-offline-v1",
+    "javaCompiler":  "javac 17.0.20.1",
+    "execution":  "offline; no business API, database, model API, or flight operation",
+    "checks":  "PASS 409 optimizer checks; 200 exhaustive comparisons; benchmark optimized=2, nearest=1",
+    "sources":  [
+                    {
+                        "file":  "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/DispatchOptimizer.java",
+                        "sha256":  "5af8a02094ac6396bf8ee5575d49273abea42cbba1f6911bff82808c9b68c3f4"
+                    },
+                    {
+                        "file":  "ruoyi/backend/ruoyi-admin/src/test/java/com/ruoyi/skytwin/DispatchOptimizerChecks.java",
+                        "sha256":  "f869f2208860a1f53bf25525ff4b0a1c33767a979626867da6fe7a5accb6dca5"
+                    },
+                    {
+                        "file":  "docs/verification/dispatch-safety-report/SummaryBenchmark.java",
+                        "sha256":  "bf0d9fb07c644fd2e7e245ecad170196821c65e07be425fe7d4da07fdad4a42c"
+                    },
+                    {
+                        "file":  "docs/verification/dispatch-safety-report/verify-report.ps1",
+                        "sha256":  "80fc522eddf98c778b5feb9eb2ef5e535624483320a6162b9e7c27fa13da33ca"
+                    }
+                ]
+}

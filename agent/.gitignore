@@ -1,0 +1,13 @@
+# 本机依赖环境
+.venv/
+# 后续保存密钥
+.env
+.env.*
+# 允许提交不包含真实密钥的配置模板
+!.env.example
+# 忽略Python自动生成的缓存
+__pycache__/
+*.pyc
+# 本地向量模型和可重建的知识索引
+.cache/
+.runtime/

@@ -1,0 +1,34 @@
+{
+  "name": "sky-twin-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "verify:uav": "node scripts/verify-uav-integration.mjs",
+    "verify:city": "node --test tests/hangzhouCore.test.mjs tests/cityRegion.test.mjs tests/cityAppearance.test.mjs tests/cityCoordinates.test.mjs tests/aircraftDisplay.test.mjs tests/airspaceOverlay.test.mjs",
+    "verify:positioning": "node --test tests/positionReplay.test.mjs",
+    "verify:routes": "node --test tests/taskRoute.test.mjs",
+    "verify:agent": "node --test tests/agentProtocol.test.mjs",
+    "verify:navigation": "node --test tests/flightNavigation.test.mjs",
+    "verify:overview": "node --test tests/overviewMetrics.test.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "element-plus": "^2.8.8",
+    "pinia": "^2.2.6",
+    "three": "^0.169.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/three": "^0.169.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.10"
+  }
+}

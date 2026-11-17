@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-20",
+  "scope": "Natural-language read-only aircraft query CLI using LangChain and existing stdio MCP",
+  "tests": {
+    "command": "agent/.venv/Scripts/python.exe -m unittest discover -s agent -p test_*.py -v",
+    "passed": 27,
+    "failed": 0,
+    "agent_tests_added": 15,
+    "models": "offline tool-calling fake; real LangChain graph",
+    "stdio_integration": "real subprocess with explicitly labelled aircraft fixture; Java adapter mocked",
+    "credentials_in_model_messages": false,
+    "covered": ["tool selection loop", "parallel and repeat query deduplication", "auth failure blocks fabricated answer", "no-tool execution proof", "missing token before model creation", "input validation", "timeout", "recursion limit", "empty fleet", "sanitized errors", "truncated and blank final answers"]
+  },
+  "python_compile": "passed",
+  "cli_help": "passed",
+  "paid_provider_requests": 0,
+  "business_writes": 0,
+  "real_deepseek_tool_selection": "not run; user acceptance pending",
+  "prior_live_mcp_java": "user supplied successful query output with count 4",
+  "rag_or_web_chat_or_dispatch": "out of scope"
+}

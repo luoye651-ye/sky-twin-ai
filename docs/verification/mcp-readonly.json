@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-20",
+  "scope": "Local stdio MCP read-only aircraft query; no LLM calls or business writes",
+  "unit_tests": {"passed": 12, "failed": 0, "fixture_data_only": true},
+  "pip_check": "No broken requirements found",
+  "python_compile": "passed",
+  "in_process_mcp": {"structured_result": true, "auth_error_not_empty_success": true},
+  "stdio_subprocess": {"tool_discovery": true, "tools": ["list_aircraft"], "error_not_empty_success": true, "closed": true},
+  "live_authenticated_aircraft_query": false,
+  "live_java_unauthorized_check": "not verified: Java connection unavailable",
+  "blockers": [
+    "SKYTWIN_TOKEN not configured at verification time",
+    "Redis startup log reports bind Permission denied; Java startup failed to connect to Redis",
+    "Existing redis.conf and Java config use 16380; start.ps1 readiness check still uses 6380; left unchanged"
+  ],
+  "paid_llm_calls": 0,
+  "business_writes": 0,
+  "rag_implemented": false,
+  "langchain_agent_tool_binding_implemented": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "/sky/environment/analyses/invalid",
+      "anonymousDenied": true
+    },
+    {
+      "method": "POST",
+      "path": "/sky/environment/analyses?requestId=invalid",
+      "anonymousDenied": true
+    }
+  ],
+  "businessWrites": 0
+}

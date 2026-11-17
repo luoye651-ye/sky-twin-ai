@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-20",
+  "scope": "Local Chinese vector RAG integrated into the existing read-only LangChain CLI; no web UI or business write tools",
+  "deployment": {
+    "fastembed": "0.9.0",
+    "embedding_model": "BAAI/bge-small-zh-v1.5",
+    "public_onnx_repository": "Qdrant/bge-small-zh-v1.5",
+    "revision": "46fbe35fd4374a00fee7de77dfddaeb6dd6a2c59",
+    "model_sha256_verified": "1294ea4b6331115a353d81f96b85e8c8d7fdcc284453d5b2fab5b016230aad38",
+    "runtime": "CPUExecutionProvider; local files only after explicit prepare",
+    "vector_dimensions": 512,
+    "knowledge_files": 3,
+    "chunks": 13,
+    "vector_store": "LangChain InMemoryVectorStore; local JSON persistence",
+    "additional_ports": 0
+  },
+  "verification": {
+    "unit_and_protocol_tests_passed": 47,
+    "unit_and_protocol_tests_failed": 0,
+    "real_embedding_retrieval_regression_passed": 20,
+    "real_embedding_retrieval_regression_total": 20,
+    "retrieval_caveat": "Hand-written calibration/regression cases, not held-out data or a claim of 100% answer accuracy",
+    "combined_graph_check": "Real local BGE retrieval plus real LangChain graph, scripted fake generative model; verified airspace source section and zero MCP calls for knowledge-only question",
+    "pip_check": "No broken requirements found",
+    "python_compile": "passed",
+    "cli_help_and_local_search": "passed",
+    "covered": ["original aircraft/MCP regression", "knowledge-only without platform token", "mixed tools", "no-hit abstention", "missing or invented citations", "retrieval error sanitization", "repeated-search cache", "search budget", "source/document freshness", "index tampering", "allowlisted ingestion excludes .env", "ONNX hash verification"]
+  },
+  "paid_deepseek_calls": 0,
+  "business_writes": 0,
+  "real_deepseek_rag_answer_validation": "not run; user command available",
+  "boundaries": ["knowledge documents explain software rules, not official aviation law", "source citation validity is not a semantic correctness proof", "domain rejection uses a calibrated similarity heuristic", "no dispatch, takeoff or emergency writes", "retrieved project snippets are sent to DeepSeek only when the user runs the natural-language CLI"]
+}

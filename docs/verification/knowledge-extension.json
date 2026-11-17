@@ -1,0 +1,148 @@
+{
+  "scope": "Eight feature retrieval coverage cases; not held-out or LLM accuracy",
+  "passed": 8,
+  "total": 8,
+  "rows": [
+    {
+      "question": "上传图片后如何运行模型检测并提交发现",
+      "expected": "上传图片分析与人工发现",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "上传图片分析与人工发现",
+          "score": 0.6554,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "提交发现证据",
+          "score": 0.5623,
+          "source": "agent/knowledge/response.md"
+        },
+        {
+          "section": "模型分析与事件追溯",
+          "score": 0.6266,
+          "source": "agent/knowledge/operations.md"
+        }
+      ]
+    },
+    {
+      "question": "原始模型预测框和人工选择框会分别保留吗",
+      "expected": "模型分析与事件追溯",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "模型分析与事件追溯",
+          "score": 0.5667,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "地图框选与独立演示环境",
+          "score": 0.5336,
+          "source": "agent/knowledge/operations.md"
+        }
+      ]
+    },
+    {
+      "question": "分析记录已经关联发现，还能重复使用吗",
+      "expected": "模型分析与事件追溯",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "模型分析与事件追溯",
+          "score": 0.5785,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "可恢复分析运行中心",
+          "score": 0.6034,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "为什么不能直接从通用事件接口结案",
+          "score": 0.6096,
+          "source": "agent/knowledge/response.md"
+        }
+      ]
+    },
+    {
+      "question": "无人机电量和载重能直接证明任务可以执行吗",
+      "expected": "无人机电量载重与仿真边界",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "无人机电量载重与仿真边界",
+          "score": 0.6316,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "飞行器状态和只读Agent",
+          "score": 0.5753,
+          "source": "agent/knowledge/platform.md"
+        },
+        {
+          "section": "创建、分配与执行任务",
+          "score": 0.5465,
+          "source": "agent/knowledge/platform.md"
+        }
+      ]
+    },
+    {
+      "question": "调度方案过期或网络中断之后怎么恢复",
+      "expected": "调度预览失败与恢复",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "调度预览失败与恢复",
+          "score": 0.6356,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "可恢复分析运行中心",
+          "score": 0.6171,
+          "source": "agent/knowledge/operations.md"
+        },
+        {
+          "section": "网页自然语言调度方案",
+          "score": 0.5712,
+          "source": "agent/knowledge/platform.md"
+        }
+      ]
+    },
+    {
+      "question": "连续对话保留几轮，多久过期",
+      "expected": "连续对话与地图联动",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "连续对话与地图联动",
+          "score": 0.5903,
+          "source": "agent/knowledge/operations.md"
+        }
+      ]
+    },
+    {
+      "question": "清空会话或重新登录后还会记住之前的对话吗",
+      "expected": "连续对话与地图联动",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "连续对话与地图联动",
+          "score": 0.6553,
+          "source": "agent/knowledge/operations.md"
+        }
+      ]
+    },
+    {
+      "question": "助手知识索引过期要如何修复",
+      "expected": "AI服务故障排查",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "AI服务故障排查",
+          "score": 0.5267,
+          "source": "agent/knowledge/operations.md"
+        }
+      ]
+    }
+  ]
+}

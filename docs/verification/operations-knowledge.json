@@ -1,0 +1,94 @@
+{
+  "scope": "Five new topic coverage checks, not held-out or LLM accuracy",
+  "passed": 5,
+  "total": 5,
+  "rows": [
+    {
+      "question": "失败任务重试会删除原来的轨迹和任务吗",
+      "expected": "失败任务重试与待处理提醒",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "失败任务重试与待处理提醒",
+          "score": 0.6187
+        },
+        {
+          "section": "安排应急侦察与重试",
+          "score": 0.5322
+        },
+        {
+          "section": "调度预览失败与恢复",
+          "score": 0.5095
+        }
+      ]
+    },
+    {
+      "question": "维护停用和充电结束后如何恢复电量，谁可以操作",
+      "expected": "资源充电维护与站点容量",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "资源充电维护与站点容量",
+          "score": 0.6495
+        }
+      ]
+    },
+    {
+      "question": "通勤班次预约如何避免并发超卖，生成任务后还能订座吗",
+      "expected": "通勤班次预约与取消",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "通勤班次预约与取消",
+          "score": 0.7511
+        },
+        {
+          "section": "失败任务重试与待处理提醒",
+          "score": 0.5797
+        },
+        {
+          "section": "创建、分配与执行任务",
+          "score": 0.5203
+        }
+      ]
+    },
+    {
+      "question": "报告草稿审核前证据改变了怎么办，旧版本还在吗",
+      "expected": "历史业务查询与报告草稿",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "历史业务查询与报告草稿",
+          "score": 0.6548
+        },
+        {
+          "section": "我的领域知识库与图像追问",
+          "score": 0.6043
+        },
+        {
+          "section": "结案条件与处置后证据",
+          "score": 0.5387
+        }
+      ]
+    },
+    {
+      "question": "候选绕行会自动保存航线吗，包含建筑物避障吗",
+      "expected": "自动候选绕行与保存",
+      "passed": true,
+      "retrieved": [
+        {
+          "section": "自动候选绕行与保存",
+          "score": 0.7048
+        },
+        {
+          "section": "连续对话与地图联动",
+          "score": 0.5581
+        },
+        {
+          "section": "地图框选与独立演示环境",
+          "score": 0.5121
+        }
+      ]
+    }
+  ]
+}

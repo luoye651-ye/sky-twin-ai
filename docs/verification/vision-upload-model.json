@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "real_model": true,
+  "source": "HAIDA test offline fixture; not Hangzhou live image",
+  "business_writes": 0,
+  "analysis_id": "ea2a1556-ea62-4492-8cb7-cfe5b1debb77",
+  "detection_count": 1,
+  "device": "0"
+}

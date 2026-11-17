@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-08",
+  "scope": "First operational feature release; local/isolated verification, no logged-in browser or real external model acceptance",
+  "checks": {
+    "java_mysql_isolated": 44,
+    "python_agent_isolated": 76,
+    "frontend_protocol_metrics": 15,
+    "retrieval_original": 20,
+    "retrieval_prior_features": 8,
+    "retrieval_operations_topics": 5,
+    "vue_typecheck_and_production_build": "passed",
+    "java_package": "passed; service checks run separately"
+  },
+  "runtime": [
+    {
+      "name": "dashboard",
+      "http": 200
+    },
+    {
+      "name": "agent_health",
+      "http": 200,
+      "payload": {
+        "ready": true,
+        "readOnly": false,
+        "message": "助手及调度预览已就绪，分配需人工确认"
+      }
+    },
+    {
+      "name": "operations_anon",
+      "http": 200,
+      "businessCode": 401
+    },
+    {
+      "name": "reports_anon",
+      "http": 200,
+      "businessCode": 401
+    }
+  ],
+  "agent_after_final_index": {
+    "ready": true,
+    "readOnly": false,
+    "message": "助手及调度预览已就绪，分配需人工确认"
+  },
+  "existing_business_records_modified": false,
+  "new_additive_tables_applied": true,
+  "external_llm_requests": 0,
+  "sha256": {
+    "ruoyi/backend/sql/sky_twin_v11_operations.sql": "80b03a0d16d66fe7f3d6f34cd5f546872c52c413097091b032939280871003d0",
+    "ruoyi/backend/ruoyi-admin/src/test/java/com/ruoyi/skytwin/OperationsWorkflowChecks.java": "b907678902cff25fb68b37220ad241948038a457464645d49c42418b93da532c",
+    "agent/test_business_tools.py": "94ad2779cbf71f50ce0f37f3b24e327e0ddfb7c1f25a3d79f071c9a2f900a4c6",
+    "agent/verify_operations_knowledge.py": "75b5e6be8f4b885bfde8f98344f373f0e84c277d1145e07cfdc7546009c8c66b",
+    "agent/knowledge/operations.md": "f3f19f1a29969b01438d66d11c7d67866746ec2ae2893dc756e688de5b11a142"
+  },
+  "limitations": [
+    "No logged-in end-to-end or map visual verification",
+    "No live external LLM acceptance of new tools",
+    "No physical aircraft or real passenger service",
+    "Report PDF requires browser print from exported HTML",
+    "Detour only considers configured rectangular airspace, no buildings/terrain"
+  ]
+}

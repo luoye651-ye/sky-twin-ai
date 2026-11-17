@@ -1,0 +1,7 @@
+export interface TrafficConflict { taskId: string; otherTaskId: string; otherTitle: string; otherAircraftId: string; entersTick: number; exitsTick: number; longitude: number; latitude: number; altitude: number; horizontalMeters: number; verticalMeters: number }
+export interface TrafficSlotProposal { taskId: string; title: string; aircraftId: string; routeRevision: number; durationSeconds: number; delaySeconds: number; departureTick: number; allowed: boolean; conflicts: TrafficConflict[]; problems: string[] }
+export interface TrafficRequest { tasks: { taskId: string; expectedRevision: number }[]; leadSeconds: number; maxDelaySeconds: number }
+export interface TrafficPlan { id: string; status: string; createdTime: string; expiresAt: string; request: TrafficRequest; result: { clockTick: number; baseTick: number; slots: TrafficSlotProposal[]; allowed: boolean } }
+export interface TrafficSlot { taskId: string; title: string; planId: string; aircraftId: string; departureTick: number; status: string; message: string; taskStatus: string }
+export interface TrafficState { clockTick: number; serverTime: string; horizontalMeters: number; projectionBufferMeters: number; verticalMeters: number; slots: TrafficSlot[]; plans: { id: string; status: string; createdTime: string }[]; checks: { id: string; taskId: string; allowed: boolean; createdTime: string }[] }
+export const trafficStatus: Record<string, string> = { reserved: '等待起飞', running: '正在飞行', completed: '已完成', cancelled: '已取消', failed: '已失败', blocked: '复核拦截', proposed: '待确认', confirmed: '已确认' }

@@ -1,0 +1,236 @@
+{
+  "date": "2026-11-14",
+  "scope": "Seven first-version AI workbench features; isolated and local verification only",
+  "checks": {
+    "python_isolated_tests": 100,
+    "frontend_node_tests": 72,
+    "java_mysql_temporary_schema_checks": 52,
+    "frontend_typecheck_and_build": "passed",
+    "java_package": "passed; business checks executed separately",
+    "prior_local_retrieval_regression": {
+      "base": 20,
+      "prior_features": 8,
+      "operations_topics": 5,
+      "verified": "2026-11-13",
+      "not_llm_accuracy": true
+    },
+    "knowledge_chunks": 29,
+    "sample_http_checks": 22,
+    "sample_restart_checks": 10
+  },
+  "runtime": [
+    {
+      "name": "main_page",
+      "http": 200
+    },
+    {
+      "name": "agent_health",
+      "http": 200,
+      "ready": true
+    },
+    {
+      "name": "demo_health",
+      "http": 200,
+      "ready": true
+    },
+    {
+      "name": "workbench_anon",
+      "http": 401,
+      "business_code": 401
+    },
+    {
+      "name": "spatial_anon",
+      "http": 200,
+      "business_code": 401
+    },
+    {
+      "name": "analysis_image_anon",
+      "http": 200,
+      "business_code": 401
+    },
+    {
+      "name": "sample_token_rejected_by_real_java",
+      "passed": true
+    }
+  ],
+  "sample": {
+    "date": "2026-11-13",
+    "scope": "actual isolated sample HTTP/gateway/CPU retrieval, not real Java/model/browser acceptance",
+    "workflow_id": "AR-3d644664cd0d4dd28cb17cbbe8c3445c",
+    "evaluation_id": "AR-63b211a6810448cdbabc89ddced06efb",
+    "checks": [
+      "isolated HTML marker /",
+      "isolated HTML marker /ai-workbench",
+      "isolated HTML marker /index.html",
+      "anonymous sample records rejected",
+      "sample normal login succeeded",
+      "server enforces sample mode",
+      "no production task dataset in sample",
+      "real model calls forbidden in sample",
+      "Java preview forbidden in sample",
+      "duplicate request reuses durable run",
+      "synthetic workflow is explicitly labeled",
+      "sample has zero model/tool calls",
+      "actual multipart document accepted",
+      "actual CPU embedding completed",
+      "owner document retrieved with real embedding",
+      "new document version indexed",
+      "old document immediately excluded",
+      "document deletion succeeded",
+      "deleted document no longer retrieved",
+      "actual local evaluation produced both variants",
+      "retrieval evaluation has zero external calls",
+      "sample HTTP client did not use production auth cookie"
+    ],
+    "checkpoint_sha256": "7c39171d14d302cb97d26f9132496eb4bdd9b60840750301bd95734b5d272c3e",
+    "span_ids": [
+      "1043fb6a-9d23-4807-9528-c1f54ac93972",
+      "f20d3525-823c-4eb5-895e-3a11d3727fe7"
+    ],
+    "evaluation_rows": [
+      {
+        "id": "R01",
+        "category": "规则",
+        "variant": "semantic",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "失败任务重试与待处理提醒",
+          "安排应急侦察与重试"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 13
+      },
+      {
+        "id": "R01",
+        "category": "规则",
+        "variant": "hybrid",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "失败任务重试与待处理提醒",
+          "安排应急侦察与重试"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 15
+      },
+      {
+        "id": "R03",
+        "category": "规则",
+        "variant": "semantic",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "通勤班次预约与取消"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 7
+      },
+      {
+        "id": "R03",
+        "category": "规则",
+        "variant": "hybrid",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "通勤班次预约与取消"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 14
+      },
+      {
+        "id": "R06",
+        "category": "规则",
+        "variant": "semantic",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "连续对话与地图联动"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 8
+      },
+      {
+        "id": "R06",
+        "category": "规则",
+        "variant": "hybrid",
+        "passed": true,
+        "model_profile": "primary",
+        "prompt_profile": "standard",
+        "sections": [
+          "连续对话与地图联动"
+        ],
+        "metric": "expected_section_in_top3",
+        "latency_ms": 12
+      }
+    ],
+    "external_model_calls": 0,
+    "production_business_writes": 0,
+    "after_restart_checks": [
+      "isolated HTML marker /",
+      "isolated HTML marker /ai-workbench",
+      "isolated HTML marker /index.html",
+      "anonymous sample records rejected",
+      "sample normal login succeeded",
+      "server enforces sample mode",
+      "no production task dataset in sample",
+      "workflow checkpoints and exact span IDs survive process restart",
+      "evaluation results survive process restart",
+      "sample HTTP client did not use production auth cookie"
+    ],
+    "last_verified_at_utc": "2026-11-13T18:41:43.738884+00:00"
+  },
+  "external_llm_calls_by_assistant": 0,
+  "limitations": [
+    "No real-account browser end-to-end acceptance of the new pages",
+    "No live external model acceptance of the new workflows",
+    "No public deployment or remote CI execution",
+    "Image questions use structured YOLO predictions, not a vision-language model",
+    "Single-worker local AI checkpoint implementation; Java remains business-state authority",
+    "The 16 evaluation cases are development regression cases, not held-out model accuracy"
+  ],
+  "source_sha256": {
+    "agent/aircraft_agent.py": "5aaf4b981234ae7762fba7ede4c445c2db0e976cadab7b6941bcfd193cdd961a",
+    "agent/chat_service.py": "402dbb09cb0e5af554fc649541dc10778e181f0b0f84adfaf24742399456e930",
+    "agent/workbench_store.py": "a7b050ca2225d85bb030ef2eaea0b43bf15d9ef63dd6c3895a647e0ab92218e8",
+    "agent/workbench_service.py": "c67524ccd7ba85de3a24a78eef9fda570010e4a889dac988676c384b647de4de",
+    "agent/workbench_api.py": "c861c4d1e43256f5a0d9e0f1225964672953e6010d41216937069c24aee0b361",
+    "agent/workbench_knowledge.py": "9c3f93f7176a30ea1f88f16662485b4bfb12599f1fea15296474b8730fc65219",
+    "agent/workbench_trace.py": "a143bef247a7f299b26f8e0b6cc4bde129aa1d5dfcb50c7fdb256e9bda5fd72a",
+    "agent/safety_policy.py": "3d177f0b42bce04d768e48ecb38ea77019f4f86c94fe67b345d78c68b1398843",
+    "agent/workbench_cases.json": "f4b0263a2356c7a6328443c99ec546073ec8a9766168c9e2dcb59d1f291cdfc1",
+    "agent/test_workbench.py": "6e92598ed17532bb4dda861063ddec388cf06c47d3e7b181e4a196a795d6caae",
+    "agent/test_demo_service.py": "ec40219062d439a1856f8154746d227da166775b7297b04a757a33cc79523beb",
+    "agent/demo_service.py": "1762a34d472712f4e9c50bbbdaece5ed454ec916ebc353c446746e26b96415b3",
+    "agent/requirements.lock.txt": "10156831599ccdebd08c1a3989ea7c0b6ef14636378503b5bcf4a2cc70219682",
+    "deploy/demo-server.mjs": "c785063a1650dcc54f6fdc72d5863d994e4a42df93fa7e0e340c2a4350251e41",
+    "deploy/start-demo.ps1": "06a1cab3503a98f51e6345b61c3a1a5ceb2bdf34ef10bc0aff41f889ed4e512d",
+    "deploy/stop-demo.ps1": "da6c21fe43568be907b8dcc6c055718be5a722401b2367347fc6ed28f51fc090",
+    "deploy/verify-demo.py": "7ca1b88aa31a98574748b41ffaca3f3ac36573aa85d262d319cdececb2084ef4",
+    "frontend/src/api/sky.ts": "ac8d0dd943babdfc8ccdfe911f98dc97ea7576c9a6541aed7419852203b208cc",
+    "frontend/src/utils/runtime.ts": "ab08674b7e12f86627f5c27730e73bff564e36d59ebaa5b038d1f60dcf110c62",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/OperationsController.java": "2da6ddea0f81f07e96873ca5ffd76e81f87fd5dfa539fe7aad310eb13e4d5665",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/EnvironmentController.java": "ecf6084600ca07bc89745604362d94a151a50c5686ac2f5f3c28924e7a2caf6c",
+    "ruoyi/backend/ruoyi-admin/src/main/java/com/ruoyi/skytwin/VisionAnalysisService.java": "3f678feee47aa0ead710b551c555dc409faa50fe100a2a15739c65abdfa91df2",
+    "frontend/src/components/workbench/EvaluationResults.vue": "dd6ad34c308951dd3165a4b50ff7a07a4610cf608137624c4635c9cb3ad506cf",
+    "frontend/src/components/workbench/EvaluationWorkbench.vue": "8f744098bbd17a787ebbb3ffcadf55770a3475525f1b5a22045dd94a7d3d956b",
+    "frontend/src/components/workbench/ImageEvidencePanel.vue": "2028b8f317b76bf9fbe97107100d3bd15fb0245eb4981b527e3564216c92c744",
+    "frontend/src/components/workbench/KnowledgeWorkbench.vue": "9b4dfbbddfd64c9e703b51a4fae25c39098f3c88f0499aa3767f370e550977e9",
+    "frontend/src/components/workbench/RunComposer.vue": "1e6b6ba61a33d5a1a91d913b974ab61ab13546211eba0d00cd18e79e66083f2c",
+    "frontend/src/components/workbench/RunInspector.vue": "8e06a97ed02c24763dcc8f35e09ffacb370f1474af85ac437ac148e3854d14d2",
+    "frontend/src/components/workbench/RunList.vue": "c3f1349d7c6da32734d0655431cf792442c0329b80005572de9161f7fad42a53",
+    "frontend/src/components/workbench/RunTimeline.vue": "0632440863458e8eb6b44a6c25c705e5d2690350329f56b5764cb42729d4c0ae",
+    "frontend/src/components/workbench/SpatialSelectionMap.vue": "56c16ed49ef631f2bc5fa067e0c925f059fc36b867b58f65d019bcd69f5d9ec2",
+    "frontend/src/components/workbench/SpatialWorkbench.vue": "7f3fd35fdb2c4f33b68b9755bcc0cf7ab87321e68fea5c520b81ee8501c3d684",
+    "frontend/src/components/workbench/WorkbenchWorkspace.vue": "7ba0b503fbb4929f2df45af1a77e24c0d480dd17b2ad4035931c396e2a6c5a9b",
+    ".github/workflows/quality.yml": "4db2e9b9f4c0a1db29aa2ecf9b8363ee01ed8af4fafae92dd0c234410ca4f9be",
+    "ruoyi/backend/sql/agent_artifacts_sqlite_v1.sql": "9ffce805c7e1d00ff54e6de35b114f7ae48eb3548c5cd34feccbed2ab9b1215f",
+    "ruoyi/backend/sql/agent_artifacts_sqlite_v2.sql": "04dc01f6e859b87b238e8caeb15f89f6fa62a1b322697815bd955770156f033c",
+    "docs/AI_ENGINEERING_WORKBENCH.md": "febe732698205585c6f613310579f839eea8f8583aedcb51d3fa44b6bdb84841"
+  }
+}

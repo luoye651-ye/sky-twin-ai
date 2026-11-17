@@ -1,0 +1,41 @@
+# 独立本地配置，由 scripts/start.ps1 加载。密码通过进程环境变量注入。
+ruoyi:
+  name: SkyTwin Admin
+  profile: ${SKYTWIN_UPLOAD_DIR}
+
+server:
+  address: 127.0.0.1
+  port: 8081
+  tomcat:
+    threads:
+      max: 100
+      min-spare: 10
+
+spring:
+  datasource:
+    druid:
+      master:
+        url: jdbc:mysql://127.0.0.1:3307/sky_twin_ruoyi?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai
+        username: sky_twin_ruoyi
+        password: ${SKYTWIN_DB_PASSWORD}
+      statViewServlet:
+        enabled: false
+      initialSize: 2
+      minIdle: 2
+      maxActive: 10
+  data:
+    redis:
+      host: 127.0.0.1
+      port: ${SKYTWIN_REDIS_PORT:16380}
+      database: 0
+      password: ${SKYTWIN_REDIS_PASSWORD}
+  devtools:
+    restart:
+      enabled: false
+
+token:
+  secret: ${SKYTWIN_TOKEN_SECRET}
+
+logging:
+  level:
+    com.ruoyi: info

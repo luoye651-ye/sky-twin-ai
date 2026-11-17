@@ -1,0 +1,14 @@
+{
+  "name": "sky-twin-river-yolov8n",
+  "base": "Windows x64 + CPython 3.13 + CUDA 12.8 wheels",
+  "python_minor": "3.13",
+  "lockfile": "ai/requirements-lock.txt",
+  "pip_phases": [
+    {"index": "https://download.pytorch.org/whl/cu128", "packages": ["torch==2.8.0", "torchvision==0.23.0"]},
+    {"index": "https://pypi.org/simple", "packages": ["ultralytics==8.3.221", "numpy==2.2.6", "opencv-python==4.12.0.88", "Pillow==11.3.0", "PyYAML==6.0.3"]}
+  ],
+  "env": {"OMP_NUM_THREADS": "4", "MKL_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4", "YOLO_CONFIG_DIR": "ai/.ultralytics"},
+  "resource": {"device": "cuda:0", "gpu": "NVIDIA GeForce RTX 4060 Ti", "memory_mib": 16380, "workers": 0},
+  "weight_dirs": {"yolov8n": {"path": "ai/weights/yolov8n.pt", "source": "Ultralytics official release v8.3.0; generic COCO initialization, NOT river-trained"}},
+  "smoke": {"command": ".\\ai\\.venv\\Scripts\\python.exe ai\\scripts\\river_yolo.py check", "expect": "KERNEL_WITNESS"}
+}

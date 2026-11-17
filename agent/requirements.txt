@@ -1,0 +1,18 @@
+# 后续编排Agent和工具调用
+langchain
+# 后续编写MCP服务端和客户端
+mcp==2.3.0
+# 后续从本地配置文件加载密钥
+python-dotenv
+# Deepseek适配包，负责把LangChain的消息和调用方式转换为DeepSeek API请求
+langchain-deepseek
+# 本地Java业务接口的HTTP客户端
+httpx==0.28.1
+# CPU本地中文Embedding，不需要额外付费API
+fastembed==0.9.0
+# 本机网页聊天服务；不维护第二套业务状态
+fastapi==0.153.0
+uvicorn==0.54.0
+# 本地文字PDF知识导入；不做OCR或外部文档抓取
+pypdf>=6.0,<7
+Pillow>=10,<13
