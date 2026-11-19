@@ -5,6 +5,7 @@ from io import BytesIO
 import json
 from pathlib import Path
 import tempfile
+import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import AsyncMock
@@ -76,7 +77,7 @@ class VisionTests(unittest.IsolatedAsyncioTestCase):
         self.identity=Principal(7,'another-session',('sky:operate',))
         self.assertEqual((await self.send(image=False)).status_code,409)
         self.identity=Principal(7,'platform-fixture-token',('sky:operate',))
-        next(iter(self.app.state.vision_contexts.values())).updated=0
+        next(iter(self.app.state.vision_contexts.values())).updated=time.monotonic()-1201
         self.assertEqual((await self.send(image=False)).status_code,409)
 
     async def test_invalid_oversized_and_secret_requests_never_call_provider(self):
